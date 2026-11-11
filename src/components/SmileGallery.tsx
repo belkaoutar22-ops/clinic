@@ -12,25 +12,25 @@ export const SmileGallery: React.FC = () => {
     {
       title: 'Digital Smile Simulation',
       category: 'Aesthetic Planning',
-      image: '/src/assets/images/service_digital_smile_1794434243743.jpg',
+      image: '/images/service_digital_smile.jpg',
       label: 'Virtual 3D Facial Symmetry',
     },
     {
       title: 'Artisan Porcelain Veneers',
       category: 'Cosmetic Ceramics',
-      image: '/src/assets/images/service_dental_veneers_1794434245184.jpg',
+      image: '/images/service_dental_veneers.jpg',
       label: 'Ultra-Thin Micro Laminates',
     },
     {
       title: 'Natural Smile Confidence',
       category: 'Patient Aesthetics',
-      image: '/src/assets/images/hero_hijab_smile_1794427918848.jpg',
+      image: '/images/hero_hijab_smile.jpg',
       label: 'Individual Facial Harmony',
     },
     {
       title: 'Ergonomic Treatment Suite',
       category: 'Clinic Environment',
-      image: '/src/assets/images/clinic_interior_luxury_1794427920389.jpg',
+      image: '/images/clinic_interior_luxury.jpg',
       label: 'Tranquil Patient Experience',
     },
   ];

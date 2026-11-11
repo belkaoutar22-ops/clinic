@@ -17,7 +17,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
     durationEstimate: '2 – 3 appointments over 10–14 days',
     suitabilityNote:
       'Suitability depends on baseline oral health, enamel condition, and bite alignment. Requires prior treatment of any underlying periodontal or restorative conditions.',
-    image: '/src/assets/images/service_hollywood_smile_1794434242005.jpg',
+    image: '/images/service_hollywood_smile.jpg',
   },
   {
     id: 'digital-smile-design',
@@ -35,7 +35,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
     durationEstimate: 'Single dedicated diagnostic session (60 minutes)',
     suitabilityNote:
       'A planning and diagnostic communication tool; digital previews are illustrative simulations to guide clinical decision-making.',
-    image: '/src/assets/images/service_digital_smile_1794434243743.jpg',
+    image: '/images/service_digital_smile.jpg',
   },
   {
     id: 'dental-veneers',
@@ -53,7 +53,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
     durationEstimate: '2 appointments with temporary wear phase',
     suitabilityNote:
       'Sufficient enamel foundation is necessary for reliable bonding. Severe malocclusion or untreated bruxism may require prior corrective therapies.',
-    image: '/src/assets/images/service_dental_veneers_1794434245184.jpg',
+    image: '/images/service_dental_veneers.jpg',
   },
   {
     id: 'teeth-whitening',
@@ -71,7 +71,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
     durationEstimate: '1 in-clinic appointment (75 minutes) or 10-day custom tray regimen',
     suitabilityNote:
       'Whitening does not lighten existing ceramic crowns, veneers, or composite restorations. Pre-existing tooth sensitivity is evaluated prior to protocol selection.',
-    image: '/src/assets/images/service_teeth_whitening_1794434245246.jpg',
+    image: '/images/service_teeth_whitening.jpg',
   },
   {
     id: 'cosmetic-dentistry',
@@ -88,7 +88,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
     durationEstimate: 'Often completed in a single appointment (60–90 minutes)',
     suitabilityNote:
       'Conservative composite bonding requires periodic maintenance and may need periodic repolishing over time.',
-    image: '/src/assets/images/service_cosmetic_dentistry_1794434263254.jpg',
+    image: '/images/service_cosmetic_dentistry.jpg',
   },
   {
     id: 'general-dental-care',
@@ -106,7 +106,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
     durationEstimate: 'Initial appointment (45–60 minutes)',
     suitabilityNote:
       'Essential foundational step for any aesthetic or restorative journey. Ensures all teeth and gums are healthy before cosmetic treatments.',
-    image: '/src/assets/images/service_general_dental_1794434264280.jpg',
+    image: '/images/service_general_dental.jpg',
   },
 ];
 
@@ -124,7 +124,7 @@ export const CLINIC_TECHNOLOGIES: TechnologyItem[] = [
       'Instant real-time 3D model generation',
       'Sub-millimeter margin accuracy for veneers',
     ],
-    image: '/src/assets/images/tech_intraoral_scanner_1794434245163.jpg',
+    image: '/images/tech_intraoral_scanner.jpg',
   },
   {
     id: 'tech-dsd',
@@ -139,7 +139,7 @@ export const CLINIC_TECHNOLOGIES: TechnologyItem[] = [
       'Interactive aesthetic preview before treatment',
       'Seamless collaboration between patient and clinician',
     ],
-    image: '/src/assets/images/service_digital_smile_1794434243743.jpg',
+    image: '/images/service_digital_smile.jpg',
   },
   {
     id: 'tech-suite',
@@ -154,7 +154,7 @@ export const CLINIC_TECHNOLOGIES: TechnologyItem[] = [
       'Discreet, low-noise clinical handpieces',
       'In-chair HD entertainment and visual displays',
     ],
-    image: '/src/assets/images/clinic_interior_luxury_1794427920389.jpg',
+    image: '/images/clinic_interior_luxury.jpg',
   },
 ];
 
@@ -168,7 +168,7 @@ export const CLINIC_TEAM: TeamMember[] = [
     education: 'BDS (Honors), MSc in Aesthetic Dentistry',
     languages: ['Arabic', 'English', 'French'],
     bio: 'Specializing in minimally invasive smile transformations and ceramic laminate veneers. Dr. Aisha emphasizes biological preservation and natural facial harmony in every customized treatment plan.',
-    image: '/src/assets/images/female_dentist_hijab_1794427921083.jpg',
+    image: '/images/female_dentist_hijab.jpg',
     role: 'dentist',
     attireNote: 'Doctor coat & modest sage green hijab',
   },
@@ -181,7 +181,7 @@ export const CLINIC_TEAM: TeamMember[] = [
     education: 'DDS, Fellowship International Congress of Oral Implantologists (FICOI)',
     languages: ['Arabic', 'English'],
     bio: 'Internationally recognized for complex occlusal rehabilitation and advanced restorative dentistry. Dr. Tariq ensures aesthetic smile enhancements maintain impeccable mechanical function and chewing comfort.',
-    image: '/src/assets/images/male_dentist_portrait_1794427922518.jpg',
+    image: '/images/male_dentist_portrait.jpg',
     role: 'dentist',
     attireNote: 'Tailored navy medical coat & scrubs',
   },
@@ -194,7 +194,7 @@ export const CLINIC_TEAM: TeamMember[] = [
     education: 'DMD, MClinDent in Prosthetics & Digital Orthodontics',
     languages: ['Arabic', 'English'],
     bio: 'Pioneer in 3D digital smile simulation and conservative tooth alignment. Dr. Sarah guides patients through interactive virtual treatment planning to ensure clear communication and personalized care.',
-    image: '/src/assets/images/female_specialist_hijab_1794427921914.jpg',
+    image: '/images/female_specialist_hijab.jpg',
     role: 'specialist',
     attireNote: 'Doctor lab coat & modest blush taupe hijab',
   },
@@ -207,7 +207,7 @@ export const CLINIC_TEAM: TeamMember[] = [
     education: 'BSc Dental Nursing & Patient Concierge Certification',
     languages: ['Arabic', 'English', 'Urdu'],
     bio: 'Dedicated to ensuring every patient feels relaxed, informed, and cared for from their initial consultation call through treatment completion and post-op follow-up.',
-    image: '/src/assets/images/team_dental_assistant_1794434263257.jpg',
+    image: '/images/team_dental_assistant.jpg',
     role: 'assistant',
     attireNote: 'Navy medical scrubs & modest sky blue hijab',
   },
@@ -226,7 +226,7 @@ export const GALLERY_CASES: GalleryCase[] = [
     afterLabel: 'Post-Restoration',
     beforeDetails: 'Diastema (midline gap), uneven incisal wear, mild enamel discoloration.',
     afterDetails: 'Harmonious tooth ratio, closed diastema, warm natural luminescence.',
-    image: '/src/assets/images/service_dental_veneers_1794434245184.jpg',
+    image: '/images/service_dental_veneers.jpg',
     beforeColor: '#C4B89B',
     afterColor: '#F7F6EE',
   },
@@ -242,7 +242,7 @@ export const GALLERY_CASES: GalleryCase[] = [
     afterLabel: 'Simulated Smile Design',
     beforeDetails: 'Discolored older composite restorations, asymmetric smile line.',
     afterDetails: 'Radiant smile arc following lower lip curvature, lifelike optical depth.',
-    image: '/src/assets/images/service_digital_smile_1794434243743.jpg',
+    image: '/images/service_digital_smile.jpg',
     beforeColor: '#BEAF95',
     afterColor: '#FAF8F0',
   },
@@ -258,7 +258,7 @@ export const GALLERY_CASES: GalleryCase[] = [
     afterLabel: 'Post-Whitening Tone',
     beforeDetails: 'Enamel shade A3.5 with minor jagged edge chipping on central incisors.',
     afterDetails: 'Enamel shade brightened to B1 with polished, balanced incisal edges.',
-    image: '/src/assets/images/service_teeth_whitening_1794434245246.jpg',
+    image: '/images/service_teeth_whitening.jpg',
     beforeColor: '#CEBF9D',
     afterColor: '#FDFCF7',
   },

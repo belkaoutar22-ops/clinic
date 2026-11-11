@@ -11,7 +11,7 @@ export const AboutSection: React.FC = () => {
             <div className="relative">
               <div className="rounded-3xl overflow-hidden border-2 border-white shadow-[0_12px_40px_rgba(18,61,89,0.08)] bg-white">
                 <img
-                  src="/src/assets/images/clinic_interior_luxury_1794427920389.jpg"
+                  src="/images/clinic_interior_luxury.jpg"
                   alt="Modern MyClinic12 dental clinic suite with ergonomic treatment chair and sunlit panoramic windows"
                   className="w-full h-auto object-cover max-h-[520px] hover:scale-[1.01] transition-transform duration-500"
                   referrerPolicy="no-referrer"

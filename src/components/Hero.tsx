@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
 
               <div className="relative rounded-3xl overflow-hidden border-2 border-white shadow-[0_20px_50px_rgba(18,61,89,0.12)] bg-white">
                 <img
-                  src="/src/assets/images/hero_hijab_smile_1794427918848.jpg"
+                  src="/images/hero_hijab_smile.jpg"
                   alt="Modest woman wearing an elegant ivory hijab with a radiant, confident natural smile"
                   className="w-full h-auto max-h-[580px] object-cover object-top hover:scale-[1.02] transition-transform duration-700"
                   referrerPolicy="no-referrer"
