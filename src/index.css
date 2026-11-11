@@ -4,6 +4,12 @@
   :root {
     --font-serif: 'Cormorant Garamond', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --color-sky-lightest: #EAF8FC;
+    --color-sky-soft: #B9E4F2;
+    --color-sky-primary: #70B9D5;
+    --color-sky-medium: #3986A8;
+    --color-navy-deep: #123D59;
+    --color-soft-grey: #F4F7F9;
   }
 }
 
@@ -15,18 +21,19 @@
   font-family: var(--font-sans);
 }
 
-/* Custom scrollbar for clean luxury feel */
+/* Custom modern scrollbar for clean healthcare feel */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7F5F0;
+  background: #F4F7F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D9D2C5;
+  background: #B9E4F2;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C5A880;
+  background: #70B9D5;
 }
+

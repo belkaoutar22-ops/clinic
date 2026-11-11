@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, Star, Shield } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const scrollTo = (id: string) => {
@@ -10,39 +10,38 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden">
-      {/* Subtle architectural background gradients */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-[#F5EFE6]/60 via-[#FAF8F5]/30 to-transparent pointer-events-none -z-10" />
-      <div className="absolute -top-32 right-12 w-96 h-96 bg-[#C5A880]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+    <section id="home" className="relative pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#EAF8FC] via-[#F4F7F9]/80 to-white">
+      {/* Subtle modern sky blue decorative radial shapes */}
+      <div className="absolute top-12 right-0 w-[500px] h-[500px] bg-gradient-to-br from-[#B9E4F2]/50 to-[#70B9D5]/20 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-0 w-[350px] h-[350px] bg-[#EAF8FC] rounded-full blur-2xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Value Proposition & CTAs (7 cols) */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            {/* Elegant editorial kicker */}
-            <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#8C7A5C] mb-4">
-              <span className="w-6 h-px bg-[#C5A880]" />
-              <span>Bespoke Cosmetic Dentistry</span>
+            {/* Elegant sky blue kicker */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 border border-[#B9E4F2] text-xs font-semibold uppercase tracking-wider text-[#3986A8] mb-5 self-start shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#70B9D5]" />
+              <span>Modern Cosmetic Dentistry & Smile Architecture</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-[#141D17] leading-[1.12] mb-6 text-balance">
-              Your Smile, <br className="hidden sm:inline" />
-              <span className="italic font-normal text-[#1E3025]">Your Confidence</span>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-normal tracking-tight text-[#123D59] leading-[1.12] mb-6 text-balance">
+              Your Smile Deserves <br className="hidden sm:inline" />
+              <span className="italic font-normal text-[#3986A8]">Exceptional Care</span>
             </h1>
 
             {/* Supporting Text */}
-            <p className="text-base sm:text-lg text-[#55635A] max-w-xl leading-relaxed mb-8">
-              Discover personalized cosmetic dentistry and modern smile design solutions tailored to
-              your needs. We harmonize dental aesthetics with biological health in a calm, welcoming
-              setting.
+            <p className="text-base sm:text-lg text-[#123D59]/75 max-w-xl leading-relaxed mb-8">
+              Discover modern cosmetic dentistry and personalized smile design solutions in a
+              welcoming and professional environment.
             </p>
 
-            {/* CTAs */}
+            {/* Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
               <button
                 onClick={() => scrollTo('#appointment-form')}
-                className="px-7 py-3.5 text-xs font-semibold uppercase tracking-wider text-white bg-[#18241D] hover:bg-[#25372C] rounded-lg transition-all duration-200 shadow-sm hover:shadow-md flex items-center justify-center gap-2 group border border-[#2D3F33]"
+                className="px-8 py-4 text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-[#70B9D5] to-[#3986A8] hover:from-[#3986A8] hover:to-[#123D59] rounded-xl transition-all duration-200 shadow-md shadow-[#70B9D5]/35 hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
               >
                 <span>Book Your Consultation</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -50,81 +49,91 @@ export const Hero: React.FC = () => {
 
               <button
                 onClick={() => scrollTo('#services')}
-                className="px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-[#18241D] bg-[#F1ECE1] hover:bg-[#EAE4D7] border border-[#DDD5C5] rounded-lg transition-colors flex items-center justify-center"
+                className="px-7 py-4 text-xs font-semibold uppercase tracking-wider text-[#123D59] bg-white hover:bg-[#EAF8FC] border border-[#B9E4F2] rounded-xl transition-colors flex items-center justify-center shadow-xs"
               >
                 Explore Our Services
               </button>
             </div>
 
-            {/* 3 Trust Indicators */}
-            <div className="pt-8 border-t border-[#E8E2D5] grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {/* 3 Visual Trust Indicators */}
+            <div className="pt-8 border-t border-[#B9E4F2]/60 grid grid-cols-1 sm:grid-cols-3 gap-5">
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#8C7A5C] shrink-0 mt-0.5" />
+                <div className="w-7 h-7 rounded-lg bg-[#EAF8FC] border border-[#B9E4F2] flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#3986A8]" />
+                </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#18241D]">Personalized Smile Design</h4>
-                  <p className="text-xs text-[#6B756E] mt-0.5">Customized to your facial balance</p>
+                  <h4 className="text-sm font-semibold text-[#123D59]">Personalized Dental Care</h4>
+                  <p className="text-xs text-[#123D59]/65 mt-0.5">Tailored to your facial balance</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#8C7A5C] shrink-0 mt-0.5" />
+                <div className="w-7 h-7 rounded-lg bg-[#EAF8FC] border border-[#B9E4F2] flex items-center justify-center shrink-0 mt-0.5">
+                  <Sparkles className="w-4 h-4 text-[#3986A8]" />
+                </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#18241D]">Modern Dental Technology</h4>
-                  <p className="text-xs text-[#6B756E] mt-0.5">3D imaging & digital simulation</p>
+                  <h4 className="text-sm font-semibold text-[#123D59]">Modern Technology</h4>
+                  <p className="text-xs text-[#123D59]/65 mt-0.5">3D scans & digital previews</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <CheckCircle2 className="w-5 h-5 text-[#8C7A5C] shrink-0 mt-0.5" />
+                <div className="w-7 h-7 rounded-lg bg-[#EAF8FC] border border-[#B9E4F2] flex items-center justify-center shrink-0 mt-0.5">
+                  <Shield className="w-4 h-4 text-[#3986A8]" />
+                </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#18241D]">Patient-Focused Care</h4>
-                  <p className="text-xs text-[#6B756E] mt-0.5">Serene & gentle treatment experience</p>
+                  <h4 className="text-sm font-semibold text-[#123D59]">Professional Dental Team</h4>
+                  <p className="text-xs text-[#123D59]/65 mt-0.5">Dedicated aesthetic specialists</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Hero Visual Asset (5 cols) */}
+          {/* Right Column: Hero Visual Asset with Floating Badges (5 cols) */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Outer champagne aura frame */}
-              <div className="absolute -inset-2 rounded-2xl bg-gradient-to-tr from-[#D5C2A5]/40 via-transparent to-[#C5A880]/30 -z-10 blur-sm" />
+              {/* Outer sky blue aura glow */}
+              <div className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[#70B9D5]/30 via-[#B9E4F2]/20 to-transparent -z-10 blur-xl" />
 
-              <div className="relative rounded-2xl overflow-hidden border border-[#DDD5C5] bg-[#F7F4EC] shadow-[0_12px_40px_rgba(24,36,29,0.08)]">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-white shadow-[0_20px_50px_rgba(18,61,89,0.12)] bg-white">
                 <img
                   src="/src/assets/images/hero_hijab_smile_1794427918848.jpg"
-                  alt="Modest woman wearing an elegant ivory hijab with a natural, healthy, confident smile"
+                  alt="Modest woman wearing an elegant ivory hijab with a radiant, confident natural smile"
                   className="w-full h-auto max-h-[580px] object-cover object-top hover:scale-[1.02] transition-transform duration-700"
                   referrerPolicy="no-referrer"
                   loading="eager"
                 />
 
-                {/* Subtle luxury scrim banner at bottom */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#18241D]/90 via-[#18241D]/50 to-transparent p-6 text-white">
+                {/* Bottom glassmorphic overlay */}
+                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#123D59]/90 via-[#123D59]/50 to-transparent p-6 text-white">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-[#D5C2A5]">
-                        Natural Dental Aesthetics
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[#B9E4F2]">
+                        MyClinic12 Aesthetics
                       </p>
-                      <p className="text-sm text-white/90 font-serif italic mt-0.5">
-                        Harmonious smile transformations tailored to each individual
+                      <p className="text-sm text-white font-serif italic mt-0.5">
+                        Harmonious smile design tailored to each patient
                       </p>
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center shrink-0">
-                      <Sparkles className="w-4 h-4 text-[#DFC7A6]" />
+                    <div className="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shrink-0">
+                      <Sparkles className="w-5 h-5 text-[#B9E4F2]" />
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Accompanying proof badge card */}
-              <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-[#FAF8F5] border border-[#DDD5C5] rounded-xl p-4 shadow-lg hidden sm:flex items-center gap-3 max-w-xs">
-                <div className="w-10 h-10 rounded-full bg-[#18241D] flex items-center justify-center text-[#C5A880] shrink-0">
-                  <span className="font-serif font-bold text-sm">SDC</span>
+              {/* Floating review card */}
+              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md border border-[#B9E4F2] rounded-2xl p-4 shadow-xl hidden sm:flex items-center gap-3.5 max-w-xs animate-in fade-in slide-in-from-bottom duration-300">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-[#70B9D5] to-[#3986A8] flex items-center justify-center text-white shadow-md shadow-[#70B9D5]/30 shrink-0">
+                  <Star className="w-5 h-5 fill-white text-white" />
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-[#18241D]">Individualized Assessment</p>
-                  <p className="text-[11px] text-[#6B756E]">Every treatment plan begins with careful clinical diagnostics</p>
+                  <div className="flex items-center gap-1 text-amber-400 text-xs mb-0.5">
+                    {'★★★★★'}
+                    <span className="text-[11px] font-semibold text-[#123D59] ml-1">4.9 / 5.0</span>
+                  </div>
+                  <p className="text-xs font-medium text-[#123D59]">Personalized Consultation</p>
+                  <p className="text-[11px] text-[#3986A8]">Patient comfort & gentle care</p>
                 </div>
               </div>
             </div>

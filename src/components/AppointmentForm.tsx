@@ -81,7 +81,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
     e.preventDefault();
     setErrorMessage(null);
 
-    // Frontend validations
+    // Form validation
     if (!fullName.trim() || fullName.trim().length < 2) {
       setErrorMessage('Please enter your full legal or preferred name.');
       return;
@@ -173,81 +173,80 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
   ];
 
   return (
-    <section id="appointment-form" className="py-20 lg:py-28 bg-[#FAF8F5]">
+    <section id="appointment-form" className="py-20 lg:py-28 bg-[#F4F7F9]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#8C7A5C] mb-3">
-            <span className="w-6 h-px bg-[#C5A880]" />
-            <span>Direct Clinical Scheduling</span>
-            <span className="w-6 h-px bg-[#C5A880]" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EAF8FC] border border-[#B9E4F2] text-xs font-semibold uppercase tracking-wider text-[#3986A8] mb-4 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#70B9D5]" />
+            <span>Direct Clinical Booking</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight text-[#141D17] leading-tight mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight text-[#123D59] leading-tight mb-4">
             Request an Appointment
           </h2>
-          <p className="text-base text-[#55635A] leading-relaxed">
+          <p className="text-base text-[#123D59]/75 leading-relaxed">
             Submit your consultation request directly to our clinical coordination team. We will
-            contact you promptly to verify your requirements and confirm available appointment slots.
+            contact you promptly to verify your requirements and confirm available clinician slots.
           </p>
         </div>
 
-        {/* Real Backend Status Indicator */}
-        <div className="mb-8 p-3.5 rounded-xl bg-[#F4EFE6] border border-[#DDD5C5] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#5D6B62] gap-2">
+        {/* Backend Status Indicator */}
+        <div className="mb-8 p-4 rounded-2xl bg-[#EAF8FC] border border-[#B9E4F2] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#123D59]/80 gap-2">
           <div className="flex items-center gap-2">
-            <Server className="w-4 h-4 text-[#8C7A5C]" />
+            <Server className="w-4 h-4 text-[#3986A8]" />
             <span>
-              <strong className="text-[#18241D]">Secure Backend Storage:</strong> Active (
+              <strong className="text-[#123D59]">Secure Backend Storage:</strong> Active (
               {backendStatus.storage})
             </span>
           </div>
-          <span className="text-[11px] font-mono text-[#8C7A5C]">
+          <span className="text-[11px] font-mono text-[#3986A8]">
             Verified Local Persistence · No Third-Party Redirects
           </span>
         </div>
 
         {/* Form Container */}
-        <div className="bg-[#FFFFFF] rounded-2xl border border-[#E8E2D5] shadow-[0_8px_40px_rgba(24,36,29,0.06)] p-6 sm:p-10">
+        <div className="bg-white rounded-3xl border border-[#B9E4F2]/60 shadow-[0_12px_40px_rgba(18,61,89,0.06)] p-6 sm:p-10">
           {submittedData ? (
             /* Submission Success State */
             <div className="text-center py-8 max-w-xl mx-auto space-y-6">
-              <div className="w-16 h-16 rounded-full bg-[#18241D] text-[#DFC7A6] flex items-center justify-center mx-auto shadow-md">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#70B9D5] to-[#3986A8] text-white flex items-center justify-center mx-auto shadow-lg shadow-[#70B9D5]/30">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
 
               <div>
-                <span className="text-xs font-mono font-medium text-[#8C7A5C] uppercase tracking-wider block mb-1">
+                <span className="text-xs font-mono font-medium text-[#3986A8] uppercase tracking-wider block mb-1">
                   Request Reference Number
                 </span>
-                <div className="text-2xl font-mono font-bold text-[#18241D] bg-[#F7F4EC] py-2 px-4 rounded-lg inline-block border border-[#E8E2D5]">
+                <div className="text-2xl font-mono font-bold text-[#123D59] bg-[#EAF8FC] py-2 px-5 rounded-xl inline-block border border-[#B9E4F2]">
                   {submittedData.referenceId}
                 </div>
               </div>
 
               <div className="space-y-2">
-                <h3 className="font-serif text-2xl font-semibold text-[#18241D]">
-                  Request Received by Smile Design Clinic
+                <h3 className="font-serif text-2xl font-semibold text-[#123D59]">
+                  Request Received by MyClinic12
                 </h3>
-                <p className="text-sm text-[#4A554E] leading-relaxed">
-                  Thank you, <strong className="text-[#18241D]">{submittedData.fullName}</strong>. Your
+                <p className="text-sm text-[#123D59]/75 leading-relaxed">
+                  Thank you, <strong className="text-[#123D59]">{submittedData.fullName}</strong>. Your
                   consultation request for{' '}
-                  <strong className="text-[#18241D]">{submittedData.service}</strong> has been
+                  <strong className="text-[#123D59]">{submittedData.service}</strong> has been
                   recorded in our clinical system.
                 </p>
               </div>
 
               {/* Crucial Clinical Status Clarity */}
-              <div className="bg-[#F5F1E8] border border-[#DDD5C5] rounded-xl p-5 text-left text-xs text-[#55635A] space-y-2">
-                <div className="flex items-center gap-2 text-[#18241D] font-semibold">
-                  <FileCheck className="w-4 h-4 text-[#8C7A5C]" />
+              <div className="bg-[#EAF8FC] border border-[#B9E4F2] rounded-2xl p-5 text-left text-xs text-[#123D59]/80 space-y-2">
+                <div className="flex items-center gap-2 text-[#123D59] font-semibold">
+                  <FileCheck className="w-4 h-4 text-[#70B9D5]" />
                   <span>Important Confirmation Protocol</span>
                 </div>
                 <p className="leading-relaxed">
                   Please note that this is a <strong>preliminary consultation request</strong>, not a
                   confirmed appointment slot. Our patient coordination desk will call you at{' '}
-                  <strong className="text-[#18241D]">{submittedData.phone}</strong> to confirm the exact
+                  <strong className="text-[#123D59]">{submittedData.phone}</strong> to confirm the exact
                   time, discuss preliminary dental records, and answer any pre-visit questions.
                 </p>
-                <div className="pt-2 border-t border-[#E8E2D5] text-[11px] text-[#7A867F]">
+                <div className="pt-2 border-t border-[#B9E4F2]/50 text-[11px] text-[#3986A8]">
                   Requested window: {submittedData.preferredDate} ({submittedData.preferredTime})
                 </div>
               </div>
@@ -255,7 +254,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <button
                   onClick={resetForm}
-                  className="w-full sm:w-auto px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-[#18241D] bg-[#FAF8F5] hover:bg-[#EFECE4] border border-[#DDD5C5] rounded-lg transition-colors"
+                  className="w-full sm:w-auto px-6 py-3 text-xs font-semibold uppercase tracking-wider text-[#123D59] bg-[#EAF8FC] hover:bg-[#B9E4F2] border border-[#B9E4F2] rounded-xl transition-colors"
                 >
                   Submit Another Request
                 </button>
@@ -274,30 +273,30 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
               {/* Row 1: Full Name & Service */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2E3B33] mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#123D59] mb-2">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-[#8C7A5C] absolute left-3.5 top-3.5 pointer-events-none" />
+                    <User className="w-4 h-4 text-[#70B9D5] absolute left-3.5 top-3.5 pointer-events-none" />
                     <input
                       type="text"
                       required
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder="e.g. Fatima Al-Mansour"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#DDD5C5] bg-[#FAF8F5] text-sm text-[#18241D] placeholder:text-[#A39987] focus:outline-none focus:border-[#18241D] focus:ring-1 focus:ring-[#18241D] transition-colors"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#B9E4F2] bg-[#F4F7F9] text-sm text-[#123D59] placeholder:text-[#123D59]/40 focus:outline-none focus:border-[#70B9D5] focus:bg-white focus:ring-2 focus:ring-[#70B9D5]/20 transition-all"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2E3B33] mb-2">
-                    Requested Service <span className="text-red-500">*</span>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#123D59] mb-2">
+                    Requested Dental Service <span className="text-red-500">*</span>
                   </label>
                   <select
                     value={service}
                     onChange={(e) => setService(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-[#DDD5C5] bg-[#FAF8F5] text-sm text-[#18241D] focus:outline-none focus:border-[#18241D] focus:ring-1 focus:ring-[#18241D] transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-[#B9E4F2] bg-[#F4F7F9] text-sm text-[#123D59] focus:outline-none focus:border-[#70B9D5] focus:bg-white focus:ring-2 focus:ring-[#70B9D5]/20 transition-all cursor-pointer"
                   >
                     {CLINIC_SERVICES.map((s) => (
                       <option key={s.id} value={s.title}>
@@ -311,14 +310,14 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
               {/* Row 2: Phone with Country Code & Optional Email */}
               <div className="grid grid-cols-1 sm:grid-cols-12 gap-6">
                 <div className="sm:col-span-7">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2E3B33] mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#123D59] mb-2">
                     Phone Number with Country Code <span className="text-red-500">*</span>
                   </label>
-                  <div className="flex rounded-xl border border-[#DDD5C5] bg-[#FAF8F5] overflow-hidden focus-within:border-[#18241D] focus-within:ring-1 focus-within:ring-[#18241D] transition-colors">
+                  <div className="flex rounded-xl border border-[#B9E4F2] bg-[#F4F7F9] overflow-hidden focus-within:border-[#70B9D5] focus-within:bg-white focus-within:ring-2 focus-within:ring-[#70B9D5]/20 transition-all">
                     <select
                       value={countryCode}
                       onChange={(e) => setCountryCode(e.target.value)}
-                      className="bg-transparent px-3 py-3 text-xs text-[#18241D] border-r border-[#DDD5C5] focus:outline-none cursor-pointer"
+                      className="bg-transparent px-3 py-3 text-xs text-[#123D59] border-r border-[#B9E4F2] focus:outline-none cursor-pointer"
                     >
                       {countryCodes.map((c) => (
                         <option key={c.code} value={c.code}>
@@ -327,31 +326,31 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                       ))}
                     </select>
                     <div className="relative flex-1">
-                      <Phone className="w-4 h-4 text-[#8C7A5C] absolute left-3.5 top-3.5 pointer-events-none" />
+                      <Phone className="w-4 h-4 text-[#70B9D5] absolute left-3.5 top-3.5 pointer-events-none" />
                       <input
                         type="tel"
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="50 123 4567"
-                        className="w-full pl-10 pr-4 py-3 bg-transparent text-sm text-[#18241D] placeholder:text-[#A39987] focus:outline-none"
+                        className="w-full pl-10 pr-4 py-3 bg-transparent text-sm text-[#123D59] placeholder:text-[#123D59]/40 focus:outline-none"
                       />
                     </div>
                   </div>
                 </div>
 
                 <div className="sm:col-span-5">
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2E3B33] mb-2">
-                    Email Address <span className="text-xs text-[#8C7A5C] font-normal">(Optional)</span>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#123D59] mb-2">
+                    Email Address <span className="text-xs text-[#3986A8] font-normal">(Optional)</span>
                   </label>
                   <div className="relative">
-                    <Mail className="w-4 h-4 text-[#8C7A5C] absolute left-3.5 top-3.5 pointer-events-none" />
+                    <Mail className="w-4 h-4 text-[#70B9D5] absolute left-3.5 top-3.5 pointer-events-none" />
                     <input
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="name@example.com"
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#DDD5C5] bg-[#FAF8F5] text-sm text-[#18241D] placeholder:text-[#A39987] focus:outline-none focus:border-[#18241D] focus:ring-1 focus:ring-[#18241D] transition-colors"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#B9E4F2] bg-[#F4F7F9] text-sm text-[#123D59] placeholder:text-[#123D59]/40 focus:outline-none focus:border-[#70B9D5] focus:bg-white focus:ring-2 focus:ring-[#70B9D5]/20 transition-all"
                     />
                   </div>
                 </div>
@@ -360,32 +359,32 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
               {/* Row 3: Preferred Date & Preferred Time */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2E3B33] mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#123D59] mb-2">
                     Preferred Appointment Date <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <Calendar className="w-4 h-4 text-[#8C7A5C] absolute left-3.5 top-3.5 pointer-events-none" />
+                    <Calendar className="w-4 h-4 text-[#70B9D5] absolute left-3.5 top-3.5 pointer-events-none" />
                     <input
                       type="date"
                       required
                       min={getMinDate()}
                       value={preferredDate}
                       onChange={(e) => setPreferredDate(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#DDD5C5] bg-[#FAF8F5] text-sm text-[#18241D] focus:outline-none focus:border-[#18241D] focus:ring-1 focus:ring-[#18241D] transition-colors"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#B9E4F2] bg-[#F4F7F9] text-sm text-[#123D59] focus:outline-none focus:border-[#70B9D5] focus:bg-white focus:ring-2 focus:ring-[#70B9D5]/20 transition-all"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#2E3B33] mb-2">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#123D59] mb-2">
                     Preferred Time Window <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <Clock className="w-4 h-4 text-[#8C7A5C] absolute left-3.5 top-3.5 pointer-events-none" />
+                    <Clock className="w-4 h-4 text-[#70B9D5] absolute left-3.5 top-3.5 pointer-events-none" />
                     <select
                       value={preferredTime}
                       onChange={(e) => setPreferredTime(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#DDD5C5] bg-[#FAF8F5] text-sm text-[#18241D] focus:outline-none focus:border-[#18241D] focus:ring-1 focus:ring-[#18241D] transition-colors"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#B9E4F2] bg-[#F4F7F9] text-sm text-[#123D59] focus:outline-none focus:border-[#70B9D5] focus:bg-white focus:ring-2 focus:ring-[#70B9D5]/20 transition-all cursor-pointer"
                     >
                       <option value="Morning (09:00 - 12:00)">Morning (09:00 - 12:00)</option>
                       <option value="Early Afternoon (12:00 - 15:00)">
@@ -402,18 +401,18 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
 
               {/* Row 4: Additional Message (optional) */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-[#2E3B33] mb-2">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#123D59] mb-2">
                   Additional Notes or Questions{' '}
-                  <span className="text-xs text-[#8C7A5C] font-normal">(Optional)</span>
+                  <span className="text-xs text-[#3986A8] font-normal">(Optional)</span>
                 </label>
                 <div className="relative">
-                  <MessageSquare className="w-4 h-4 text-[#8C7A5C] absolute left-3.5 top-3.5 pointer-events-none" />
+                  <MessageSquare className="w-4 h-4 text-[#70B9D5] absolute left-3.5 top-3.5 pointer-events-none" />
                   <textarea
                     rows={3}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Tell us about your dental goals, previous cosmetic work, or any tooth sensitivities..."
-                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#DDD5C5] bg-[#FAF8F5] text-sm text-[#18241D] placeholder:text-[#A39987] focus:outline-none focus:border-[#18241D] focus:ring-1 focus:ring-[#18241D] transition-colors"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-[#B9E4F2] bg-[#F4F7F9] text-sm text-[#123D59] placeholder:text-[#123D59]/40 focus:outline-none focus:border-[#70B9D5] focus:bg-white focus:ring-2 focus:ring-[#70B9D5]/20 transition-all"
                   />
                 </div>
               </div>
@@ -425,11 +424,11 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                     type="checkbox"
                     checked={consentContact}
                     onChange={(e) => setConsentContact(e.target.checked)}
-                    className="mt-1 w-4 h-4 text-[#18241D] rounded border-[#DDD5C5] focus:ring-[#18241D]"
+                    className="mt-1 w-4 h-4 text-[#70B9D5] rounded border-[#B9E4F2] focus:ring-[#70B9D5]"
                   />
-                  <span className="text-xs text-[#4A554E] leading-relaxed select-none">
-                    I consent to being contacted by the Smile Design Clinic clinical coordination team
-                    via phone call or message regarding my appointment request, treatment suitability,
+                  <span className="text-xs text-[#123D59]/80 leading-relaxed select-none">
+                    I consent to being contacted by the MyClinic12 clinical coordination team via
+                    phone call or message regarding my appointment request, treatment suitability,
                     and scheduling.
                   </span>
                 </label>
@@ -440,7 +439,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-4 text-xs font-semibold uppercase tracking-widest text-white bg-[#18241D] hover:bg-[#25372C] disabled:bg-[#55635A] rounded-xl transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 border border-[#2D3F33]"
+                  className="w-full py-4 text-xs font-semibold uppercase tracking-widest text-white bg-gradient-to-r from-[#70B9D5] to-[#3986A8] hover:from-[#3986A8] hover:to-[#123D59] disabled:opacity-60 rounded-2xl transition-all duration-200 shadow-lg shadow-[#70B9D5]/30 flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <>
@@ -454,8 +453,8 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({
               </div>
 
               <div className="text-center pt-2">
-                <p className="text-[11px] text-[#7A867F] flex items-center justify-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#8C7A5C]" />
+                <p className="text-[11px] text-[#123D59]/65 flex items-center justify-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#70B9D5]" />
                   <span>
                     Your medical privacy is protected. Requests are stored directly on the clinic’s
                     secure backend.

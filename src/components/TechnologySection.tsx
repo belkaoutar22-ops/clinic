@@ -1,40 +1,27 @@
 import React, { useState } from 'react';
 import { CLINIC_TECHNOLOGIES } from '../data/clinicData';
-import { Monitor, Scan, Activity, Palette, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Monitor, Scan, Sparkles, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 export const TechnologySection: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   const currentTech = CLINIC_TECHNOLOGIES[activeTab];
 
-  const getTechIcon = (id: string) => {
-    switch (id) {
-      case 'tech-dsd':
-        return <Monitor className="w-5 h-5 text-[#8C7A5C]" />;
-      case 'tech-scanner':
-        return <Scan className="w-5 h-5 text-[#8C7A5C]" />;
-      case 'tech-imaging':
-        return <Activity className="w-5 h-5 text-[#8C7A5C]" />;
-      case 'tech-color':
-      default:
-        return <Palette className="w-5 h-5 text-[#8C7A5C]" />;
-    }
-  };
-
   return (
-    <section id="technology" className="py-20 lg:py-28 bg-[#F5F2EB]/60 border-y border-[#E8E2D5]">
+    <section id="technology" className="py-20 lg:py-28 bg-[#EAF8FC]/60 border-y border-[#B9E4F2]/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-14">
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#8C7A5C] mb-3">
-            <span className="w-6 h-px bg-[#C5A880]" />
-            <span>Clinical Precision</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#B9E4F2] text-xs font-semibold uppercase tracking-wider text-[#3986A8] mb-4 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#70B9D5]" />
+            <span>Advanced Clinical Diagnostics</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight text-[#141D17] leading-tight mb-4">
-            Modern Technology for Personalized Smile Planning
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal tracking-tight text-[#123D59] leading-tight mb-4">
+            Modern Technology. Personalized Dental Care.
           </h2>
-          <p className="text-base text-[#55635A] leading-relaxed">
-            We integrate modern digital imaging, 3D visualization, and diagnostic analysis to guide
-            accurate treatment simulations and collaborative smile design.
+          <p className="text-base text-[#123D59]/75 leading-relaxed">
+            We incorporate modern 3D optical scanning, virtual aesthetic smile mapping, and
+            contemporary ergonomic treatment equipment to ensure high diagnostic precision and
+            patient comfort.
           </p>
         </div>
 
@@ -46,105 +33,87 @@ export const TechnologySection: React.FC = () => {
               <button
                 key={tech.id}
                 onClick={() => setActiveTab(idx)}
-                className={`w-full text-left p-5 rounded-xl border transition-all duration-200 flex items-start gap-4 ${
+                className={`w-full text-left p-5 rounded-2xl border transition-all duration-200 flex items-start gap-4 ${
                   activeTab === idx
-                    ? 'bg-[#FFFFFF] border-[#C5A880] shadow-[0_4px_20px_rgba(24,36,29,0.06)]'
-                    : 'bg-[#FAF8F5]/80 border-[#E8E2D5] hover:bg-white hover:border-[#DDD5C5]'
+                    ? 'bg-white border-[#70B9D5] shadow-[0_8px_24px_rgba(112,185,213,0.2)] ring-1 ring-[#70B9D5]'
+                    : 'bg-white/70 border-[#B9E4F2]/60 hover:bg-white hover:border-[#70B9D5]'
                 }`}
               >
                 <div
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                    activeTab === idx ? 'bg-[#18241D] text-[#DFC7A6]' : 'bg-[#EFECE4] text-[#6B756E]'
+                  className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-colors ${
+                    activeTab === idx
+                      ? 'bg-gradient-to-br from-[#70B9D5] to-[#3986A8] text-white shadow-sm'
+                      : 'bg-[#EAF8FC] text-[#3986A8]'
                   }`}
                 >
-                  {getTechIcon(tech.id)}
+                  {idx === 0 ? <Scan className="w-5 h-5" /> : <Monitor className="w-5 h-5" />}
                 </div>
                 <div>
-                  <div className="text-xs font-mono font-medium text-[#8C7A5C] uppercase tracking-wider mb-0.5">
+                  <div className="text-[11px] font-mono font-semibold text-[#3986A8] uppercase tracking-wider mb-0.5">
                     {tech.category}
                   </div>
-                  <h4 className="text-sm font-semibold text-[#18241D]">{tech.title}</h4>
+                  <h4 className="text-sm font-semibold text-[#123D59]">{tech.title}</h4>
                 </div>
               </button>
             ))}
 
-            <div className="p-4 rounded-xl bg-[#EFEBE2] border border-[#DDD5C5] text-[11px] text-[#6B756E] leading-relaxed">
-              <span className="font-semibold text-[#18241D]">Note for Clinic Demonstration:</span>{' '}
-              Technologies shown are illustrative examples of digital cosmetic dentistry workflows.
-              Specific hardware and clinical devices are confirmed during individual clinic setup.
+            {/* Illustrative Notice */}
+            <div className="p-4 rounded-2xl bg-white border border-[#B9E4F2] text-xs text-[#123D59]/70 leading-relaxed flex items-start gap-2.5">
+              <ShieldAlert className="w-4 h-4 text-[#70B9D5] shrink-0 mt-0.5" />
+              <span>
+                <strong className="text-[#123D59]">Illustrative Technology Visuals:</strong> Images
+                depict modern aesthetic dentistry workflows and digital scanning equipment.
+                Confirmed clinical hardware is reviewed with patients during consultation.
+              </span>
             </div>
           </div>
 
-          {/* Right Column: Interactive Deep-Dive Viewport (8 cols) */}
-          <div className="lg:col-span-8 bg-[#FFFFFF] rounded-2xl border border-[#E8E2D5] p-6 sm:p-10 shadow-sm">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#F0EBE0] mb-6">
+          {/* Right Column: Deep-Dive Viewport with Image (8 cols) */}
+          <div className="lg:col-span-8 bg-white rounded-3xl border border-[#B9E4F2]/60 p-6 sm:p-9 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#EAF8FC] mb-6">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#8C7A5C]">
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#3986A8]">
                   {currentTech.category}
                 </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#18241D] mt-1">
+                <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-[#123D59] mt-1">
                   {currentTech.title}
                 </h3>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F7F4EC] border border-[#DDD5C5] text-xs font-medium text-[#18241D] self-start sm:self-auto">
-                <Sparkles className="w-3.5 h-3.5 text-[#8C7A5C]" />
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF8FC] border border-[#B9E4F2] text-xs font-medium text-[#123D59]">
+                <Sparkles className="w-3.5 h-3.5 text-[#70B9D5]" />
                 <span>{currentTech.badge}</span>
               </div>
             </div>
 
-            <p className="text-base text-[#4A554E] leading-relaxed mb-8">
-              {currentTech.description}
-            </p>
-
-            {/* Illustrative Simulation Graphic Container */}
-            <div className="bg-[#18241D] rounded-xl p-6 sm:p-8 text-white relative overflow-hidden mb-8 border border-[#2D3F33]">
-              {/* Background technical grid pattern */}
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#C5A880_1px,transparent_1px)] [background-size:16px_16px]" />
-
-              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-                  <div className="text-[11px] uppercase tracking-wider text-[#DFC7A6] font-mono mb-1">
-                    Simulation Metric
-                  </div>
-                  <div className="text-xl font-serif text-white">0.05 mm</div>
-                  <div className="text-xs text-white/60 mt-1">Virtual margin accuracy</div>
-                </div>
-
-                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-                  <div className="text-[11px] uppercase tracking-wider text-[#DFC7A6] font-mono mb-1">
-                    Proportion Rule
-                  </div>
-                  <div className="text-xl font-serif text-white">1 : 1.618</div>
-                  <div className="text-xs text-white/60 mt-1">Golden aesthetic facial ratio</div>
-                </div>
-
-                <div className="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10">
-                  <div className="text-[11px] uppercase tracking-wider text-[#DFC7A6] font-mono mb-1">
-                    Patient Preview
-                  </div>
-                  <div className="text-xl font-serif text-white">Interactive 3D</div>
-                  <div className="text-xs text-white/60 mt-1">Visual model alignment</div>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-white/70">
-                <span>Clinical Role: {currentTech.clinicalRole}</span>
-                <span className="font-mono text-[10px] text-[#DFC7A6]">ILLUSTRATIVE DEMO</span>
+            {/* Large Original AI Generated Tech Visual */}
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-[#B9E4F2]/50 bg-[#EAF8FC]">
+              <img
+                src={currentTech.image}
+                alt={currentTech.title}
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-3 right-3 bg-[#123D59]/80 backdrop-blur-md px-3 py-1 rounded-lg text-white font-mono text-[10px] uppercase">
+                Original AI Visual · MyClinic12
               </div>
             </div>
 
-            {/* Key Benefits List */}
+            <p className="text-sm sm:text-base text-[#123D59]/80 leading-relaxed mb-6">
+              {currentTech.description}
+            </p>
+
+            {/* Key Benefits */}
             <div>
-              <h5 className="text-xs font-semibold uppercase tracking-wider text-[#8C7A5C] mb-3">
-                Key Patient & Clinical Benefits
+              <h5 className="text-xs font-semibold uppercase tracking-wider text-[#3986A8] mb-3">
+                Key Diagnostic & Patient Benefits
               </h5>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {currentTech.benefits.map((benefit, i) => (
                   <div
                     key={i}
-                    className="p-3.5 rounded-lg bg-[#FAF8F5] border border-[#E8E2D5] flex items-start gap-2.5 text-xs text-[#2E3B33]"
+                    className="p-3.5 rounded-xl bg-[#F4F7F9] border border-[#B9E4F2]/40 flex items-start gap-2.5 text-xs text-[#123D59]"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-[#8C7A5C] shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-[#70B9D5] shrink-0 mt-0.5" />
                     <span>{benefit}</span>
                   </div>
                 ))}

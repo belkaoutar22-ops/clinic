@@ -7,6 +7,7 @@ export interface ServiceItem {
   clinicalStages: string[];
   durationEstimate: string;
   suitabilityNote: string;
+  image: string;
 }
 
 export interface TechnologyItem {
@@ -17,6 +18,7 @@ export interface TechnologyItem {
   benefits: string[];
   clinicalRole: string;
   badge: string;
+  image: string;
 }
 
 export interface TeamMember {
@@ -29,6 +31,7 @@ export interface TeamMember {
   languages: string[];
   bio: string;
   image: string;
+  role: 'dentist' | 'specialist' | 'assistant';
   attireNote: string;
 }
 
@@ -43,6 +46,7 @@ export interface GalleryCase {
   afterLabel: string;
   beforeDetails: string;
   afterDetails: string;
+  image: string;
   beforeColor: string;
   afterColor: string;
 }

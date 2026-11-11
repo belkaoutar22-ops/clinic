@@ -23,7 +23,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#1A1D1C] flex flex-col font-sans selection:bg-[#C5A880]/30 selection:text-[#18241D]">
+    <div className="min-h-screen bg-white text-[#123D59] flex flex-col font-sans selection:bg-[#70B9D5]/30 selection:text-[#123D59]">
       {/* Top Navigation */}
       <Header onOpenStaffPortal={() => setStaffPortalOpen(true)} />
 

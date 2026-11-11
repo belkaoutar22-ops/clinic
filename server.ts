@@ -299,7 +299,7 @@ async function start() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Smile Design Clinic server running at http://0.0.0.0:${PORT}`);
+    console.log(`MyClinic12 server running at http://0.0.0.0:${PORT}`);
   });
 }
 
