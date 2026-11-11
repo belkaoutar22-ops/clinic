@@ -1,0 +1,50 @@
+[
+  {
+    "id": "apt-1794428378738",
+    "referenceId": "SDC-2026-9703",
+    "fullName": "Dr. Layla Mansouri",
+    "phone": "50 999 1234",
+    "countryCode": "+971",
+    "email": "layla.m@example.com",
+    "service": "Hollywood Smile",
+    "preferredDate": "2026-11-25",
+    "preferredTime": "Morning (09:00 - 12:00)",
+    "message": "Looking forward to aesthetic smile design consultation.",
+    "consentContact": true,
+    "status": "pending_review",
+    "createdAt": "2026-11-11T20:19:38.738Z",
+    "notes": "Awaiting phone contact by clinical coordination desk."
+  },
+  {
+    "id": "apt-001",
+    "referenceId": "SDC-2026-1042",
+    "fullName": "Nour El-Din Mansour",
+    "phone": "50 892 3411",
+    "countryCode": "+971",
+    "email": "nour.mansour@example.com",
+    "service": "Digital Smile Design",
+    "preferredDate": "2026-11-18",
+    "preferredTime": "Morning (09:00 - 12:00)",
+    "message": "Interested in aesthetic evaluation and shade matching consultation.",
+    "consentContact": true,
+    "status": "contacted",
+    "createdAt": "2026-11-09T20:13:40.916Z",
+    "notes": "Initial contact made by Clinical Coordinator. Patient sent medical history questionnaire."
+  },
+  {
+    "id": "apt-002",
+    "referenceId": "SDC-2026-1088",
+    "fullName": "Mariam Al-Hashemi",
+    "phone": "55 412 9087",
+    "countryCode": "+971",
+    "email": "m.hashemi@example.com",
+    "service": "Hollywood Smile",
+    "preferredDate": "2026-11-20",
+    "preferredTime": "Early Afternoon (12:00 - 15:00)",
+    "message": "Seeking comprehensive consultation regarding ceramic veneers and contouring.",
+    "consentContact": true,
+    "status": "pending_review",
+    "createdAt": "2026-11-11T15:13:40.916Z",
+    "notes": "Requires diagnostic smile simulation scan slot."
+  }
+]
